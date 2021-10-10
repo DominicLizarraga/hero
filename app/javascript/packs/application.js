@@ -4,7 +4,6 @@
 // that code so it'll be compiled.
 
 import "bootstrap"
-import './src/application.scss'
 
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
@@ -16,3 +15,4 @@ require("bootstrap/dist/js/bootstrap")
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+import '../stylesheets/application'
