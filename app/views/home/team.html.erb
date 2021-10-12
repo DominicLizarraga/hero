@@ -1,17 +1,18 @@
-<h1>Create super hero team</h1>
 <br>
-<div class="card mb-3" style="max-width: 740px;">
-  <div class="row no-gutters">
-    <div class="col-md-4">
-      <img src="..." class="card-img" alt="...">
+
+<div class="card">
+
+    <div class="card-header">
+      <h5> <%= @team_number > 0 ? "#{@team_number} super heros..." : "How many team members do you need?" %>   </h5>
     </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-      </div>
+
+      <% if @team_number > 0 %>
+        <%= render "home/show_team" %>
+      <% else %>
+        <%= render "home/create_team" %>
+      <% end %>
+    <div class="card-footer w-100">
     </div>
-  </div>
 </div>
+
 
