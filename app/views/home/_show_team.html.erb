@@ -1,23 +1,28 @@
 <br>
+<% @count = 0 %>
 <% @team_number.times do %>
+<% @rand_num = rand(1..1000) %>
+<% @set_number = rand(1..4) %>
+<% @count += 1 %>
+
   <div class="row no-gutters">
 
     <div class="col-md-4 mt-2 rounded-circle" style="text-align: center;">
-      <%= image_tag @avatar, alt: "alttext", size: "300x300" %>
+      <%= image_tag Faker::Avatar.image(slug: @rand_num, size: "200x200", format: "png", set: "set#{@set_number}", bgset: "bg1"), alt: "alttext", size: "300x300" %>
     </div>
       <div class="col-md-8">
         <div class="card-body">
           <blockquote class="blockquote mb-0">
-            <p class="card-text">Your super hero name: <strong><%= @hero_name %></strong></p>
-            <p class="card-text"> Your super hero power: <cite class="text-info"> <%= @hero_power %> </cite>  </p>
+            <p class="card-text">Your super hero name: # <%= @count  %> <strong><%= Faker::Superhero.name %></strong></p>
+            <p class="card-text"> Your super hero power: <cite class="text-info"> <%= Faker::Superhero.power %> </cite>  </p>
 
             <hr class="my-4">
 
-            <p class="card-text"> Your super corp power: <cite class="text-info"> <%= @corp_power %> </cite>  </p>
+            <p class="card-text"> Your super corp power: <cite class="text-info"> <%= Faker::Company.bs %> </cite>  </p>
 
             <hr class="my-4">
 
-            <p class="card-text"> Your super corp title: <cite class="text-info"> <%= @corp_title %> </cite>  </p>
+            <p class="card-text"> Your super corp title: <cite class="text-info"> <%= Faker::Company.profession %> </cite>  </p>
 
             <hr class="my-4">
 
@@ -25,5 +30,7 @@
           </blockquote>
         </div>
       </div>
+            <br>
+
   </div>
 <% end %>
