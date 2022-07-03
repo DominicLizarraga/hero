@@ -17,6 +17,14 @@ class HomeController < ApplicationController
 
   end
 
+  def show
+    @count = 0
+    @team_number.times do
+    @rand_num = rand(1..1000)
+    @set_number = rand(1..4)
+    @count += 1
+  end
+
 
   def team
     @team_number = params[:team_number].to_i
@@ -24,4 +32,6 @@ class HomeController < ApplicationController
     @rand_num = rand(1..1000)
     @set_number = rand(1..4)
   end
+
+
 end
